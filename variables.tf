@@ -18,9 +18,9 @@ EOT
     name                  = string
     spring_cloud_app_id   = string
     environment_variables = optional(map(string))
-    instance_count        = optional(number, 1)
+    instance_count        = optional(number) # Default: 1
     jvm_options           = optional(string)
-    runtime_version       = optional(string, "Java_8")
+    runtime_version       = optional(string) # Default: "Java_8"
     quota = optional(object({
       cpu    = optional(string)
       memory = optional(string)
