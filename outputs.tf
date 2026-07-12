@@ -1,3 +1,7 @@
+output "spring_cloud_java_deployments_id" {
+  description = "Map of id values across all spring_cloud_java_deployments, keyed the same as var.spring_cloud_java_deployments"
+  value       = { for k, v in azurerm_spring_cloud_java_deployment.spring_cloud_java_deployments : k => v.id }
+}
 output "spring_cloud_java_deployments_environment_variables" {
   description = "Map of environment_variables values across all spring_cloud_java_deployments, keyed the same as var.spring_cloud_java_deployments"
   value       = { for k, v in azurerm_spring_cloud_java_deployment.spring_cloud_java_deployments : k => v.environment_variables }
